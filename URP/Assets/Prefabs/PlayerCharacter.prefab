@@ -269,6 +269,12 @@ MonoBehaviour:
     m_Interactions: 
     m_SingletonActionBindings: []
     m_Flags: 0
+  collectedClip: {fileID: 0}
+  healingEffect: {fileID: 4814386229707798971, guid: 0e7e2e9b2adba8e4095b88a2db4851af, type: 3}
+  damageEffect: {fileID: 4814386229707798971, guid: 05aace42a3484f9489be60d5567bcbaf, type: 3}
+  score: 0
+  robots: 2
+  gameOverText: {fileID: 0}
 --- !u!50 &5697959645366936467
 Rigidbody2D:
   serializedVersion: 4

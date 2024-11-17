@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -25,7 +26,6 @@ public class PlayerController : MonoBehaviour
     bool isVulnerable;
     float damageCooldown;
 
-
     // Variables related to animation
     Animator animator;
     Vector2 moveDirection = new Vector2(1, 0);
@@ -37,6 +37,15 @@ public class PlayerController : MonoBehaviour
 
     AudioSource audioSource;
     public AudioClip collectedClip;
+
+    public ParticleSystem healingEffect;
+    public ParticleSystem damageEffect;
+
+    public int score = 0;
+    public int robots = 0;
+
+    public GameObject gameOverText;
+    bool gameOver = false;
 
     // Start is called before the first frame update
     void Start()
@@ -90,6 +99,25 @@ public class PlayerController : MonoBehaviour
                 isVulnerable = false;
             }
         }
+
+        if (score >= robots) {
+            gameOverText.SetActive(true);
+            gameOver = true;
+            speed = 0;
+        }
+
+        if (health <= 0) {
+            gameOverText.SetActive(true);
+            gameOver = true;
+            speed = 0;
+        }
+        if (Input.GetKey(KeyCode.R)) // check to see if the player is pressing R
+        {
+            if (gameOver == true) // check to see if the game over boolean has been set to true
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); // this loads the currently active scene, which results in a restart of whatever scene the player is currently in
+            }
+        }
     }
 
     public void ChangeHealth(int amount)
@@ -100,6 +128,7 @@ public class PlayerController : MonoBehaviour
             {
                 return;
             }
+            Instantiate(damageEffect, rigidbody2d.position + Vector2.up * 0.5f, Quaternion.identity);
             isInvincible = true;
             damageCooldown = timeInvincible;
             animator.SetTrigger("Hit");
@@ -111,6 +140,7 @@ public class PlayerController : MonoBehaviour
             {
                 return;
             }
+            Instantiate(healingEffect, rigidbody2d.position + Vector2.up * 0.5f, Quaternion.identity);
             isVulnerable = true;
             damageCooldown = timeVulnerable;
         }
@@ -155,5 +185,12 @@ public class PlayerController : MonoBehaviour
         audioSource.PlayOneShot(clip);
     }
 
-}
+    public void ChangeScore(int amount)
+    {
+        if (amount > 0)
+        {
+            score = score + amount;
+        }
+    }
+    }
 

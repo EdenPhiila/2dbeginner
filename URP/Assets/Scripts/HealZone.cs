@@ -13,6 +13,6 @@ public class HealZone : MonoBehaviour
         if (controller != null && controller.maxHealth > controller.health)
             {
                 controller.ChangeHealth(1);
-            }
+        }
     }
 }

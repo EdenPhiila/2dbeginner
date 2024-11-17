@@ -176,7 +176,7 @@ MonoBehaviour:
   speed: 0
   vertical: 0
   changeTime: 3
-  collectedClip: {fileID: 8300000, guid: 4ecf2abcdd2987b4ab2773ac82a0f2de, type: 3}
+  smokeEffect: {fileID: 8382140413521492977, guid: c24cc9604243cd8409bf74a54f2b39a7, type: 3}
 --- !u!95 &8213840757587188108
 Animator:
   serializedVersion: 5

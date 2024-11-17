@@ -17,12 +17,28 @@ public class EnemyController : MonoBehaviour
 
     bool aggressive = true;
 
+    public ParticleSystem smokeEffect;
+
+    private PlayerController rubyController; // this line of code creates a variable called "rubyController" to store information about the RubyController script!
+
     // Start is called before the first frame update
     void Start()
     {
         rigidbody2d = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         timer = changeTime;
+
+        GameObject rubyControllerObject = GameObject.FindWithTag("RubyController"); //this line of code finds the RubyController script by looking for a "RubyController" tag on Ruby
+
+        if (rubyControllerObject != null)
+        {
+            rubyController = rubyControllerObject.GetComponent<PlayerController>(); //and this line of code finds the rubyController and then stores it in a variable
+            print("Found the RubyConroller Script!");
+        }
+        if (rubyController == null)
+        {
+            print("Cannot find GameController Script!");
+        }
 
     }
 
@@ -78,7 +94,16 @@ public class EnemyController : MonoBehaviour
 
     public void Fix()
     {
-        Destroy(gameObject);
+        aggressive = false;
+        GetComponent<Rigidbody2D>().simulated = false;
+        animator.SetTrigger("Fixed");
+
+        smokeEffect.Stop();
+
+        if (rubyController != null) 
+        {
+            rubyController.ChangeScore(1);
+        }
     }
 
 }

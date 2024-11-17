@@ -1,0 +1,5 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement name="Background" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Art/Ruby/UI/UIDialogueBox.png?fileID=21300000&amp;guid=c4592e9bd029fcc45843314f2192f59e&amp;type=3#UIDialogueBox&quot;); height: 147px; margin-top: 25px; margin-right: 25px; margin-bottom: 25px; margin-left: 25px; padding-top: 1px; padding-right: 2px; padding-bottom: 4px; padding-left: 4px; position: absolute; top: 372px; left: 267px; right: 279px;">
+        <ui:Label tabindex="-1" text="GAME OVER! Press &quot;R&quot; to RESTART!" parse-escape-sequences="true" display-tooltip-when-elided="true" style="height: 69px; font-size: 50px; color: rgb(1, 255, 113); -unity-font-style: bold; flex-wrap: wrap; width: 967px; position: absolute; top: 35px; left: 199px;" />
+    </ui:VisualElement>
+</ui:UXML>
