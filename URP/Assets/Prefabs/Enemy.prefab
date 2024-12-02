@@ -15,9 +15,9 @@ GameObject:
   - component: {fileID: 2452863183098601872}
   - component: {fileID: 8213840757587188108}
   - component: {fileID: 358264880422974904}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -177,6 +177,7 @@ MonoBehaviour:
   vertical: 0
   changeTime: 3
   smokeEffect: {fileID: 8382140413521492977, guid: c24cc9604243cd8409bf74a54f2b39a7, type: 3}
+  fix: {fileID: 8300000, guid: 4e356d8e36201c14da953082c4d569ab, type: 3}
 --- !u!95 &8213840757587188108
 Animator:
   serializedVersion: 5

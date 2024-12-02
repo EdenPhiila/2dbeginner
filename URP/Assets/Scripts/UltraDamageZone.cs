@@ -12,7 +12,7 @@ public class UltraDamageZone : MonoBehaviour
 
         if (controller != null)
         {
-            controller.ChangeHealth(-4);
+            controller.ChangeHealth(-3);
         }
     }
 }

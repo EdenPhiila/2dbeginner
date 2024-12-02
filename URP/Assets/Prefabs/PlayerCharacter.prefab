@@ -232,6 +232,8 @@ MonoBehaviour:
     m_Flags: 0
   speed: 3
   maxHealth: 5
+  maxMana: 3
+  timeManaSick: 0.5
   timeInvincible: 2
   timeVulnerable: 2
   projectilePrefab: {fileID: 1614687693458846687, guid: 9cad587848c787847b96964d2c44fe24, type: 3}
@@ -269,12 +271,33 @@ MonoBehaviour:
     m_Interactions: 
     m_SingletonActionBindings: []
     m_Flags: 0
-  collectedClip: {fileID: 0}
+  win: {fileID: 8300000, guid: d88a197d7751c9a448eea078220825db, type: 3}
+  damage: {fileID: 8300000, guid: c7d3a91ac32abbe47a8931a8ffc37bc6, type: 3}
   healingEffect: {fileID: 4814386229707798971, guid: 0e7e2e9b2adba8e4095b88a2db4851af, type: 3}
   damageEffect: {fileID: 4814386229707798971, guid: 05aace42a3484f9489be60d5567bcbaf, type: 3}
   score: 0
   robots: 2
+  ultraGear: 0
   gameOverText: {fileID: 0}
+  teleportAction:
+    m_Name: Teleport
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: f33f9542-1739-49e9-95ea-c33f1d011322
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+  meleeAction:
+    m_Name: Melee
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 7bfeee18-72b3-49a0-9da3-c2a2dd76220c
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+  meleeSwing: {fileID: 0}
 --- !u!50 &5697959645366936467
 Rigidbody2D:
   serializedVersion: 4

@@ -21,6 +21,8 @@ public class EnemyController : MonoBehaviour
 
     private PlayerController rubyController; // this line of code creates a variable called "rubyController" to store information about the RubyController script!
 
+    public AudioClip fix;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -103,6 +105,7 @@ public class EnemyController : MonoBehaviour
         if (rubyController != null) 
         {
             rubyController.ChangeScore(1);
+            rubyController.PlaySound(fix);
         }
     }
 
